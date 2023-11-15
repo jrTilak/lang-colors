@@ -3,7 +3,6 @@ const path = require("path");
 const app = express();
 const port = process.env.PORT || 5678;
 
-
 //website homepage
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/web/index.html"));
@@ -33,3 +32,5 @@ app.use("/api/v1/lang", require("./routes/v1/lang.js"));
 app.listen(port, () => {
   console.log(`App listening on port ${port}`);
 });
+
+module.exports = app;
